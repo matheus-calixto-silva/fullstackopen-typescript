@@ -1,5 +1,4 @@
 import isNumber from "./utils";
-
 interface Result {
   periodLength: number;
   trainingDays: number;
@@ -67,4 +66,4 @@ try {
     errorMessage += ' Error: ' + error.message;
   }
   console.log(errorMessage);
-} 
+}
