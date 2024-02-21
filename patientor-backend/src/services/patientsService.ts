@@ -1,14 +1,19 @@
 import { v4 as uuid } from 'uuid';
-import data from "../../data/patients";
+import patientEntries from "../../data/patients";
 
 import { NewPatient, Patient, PatientWithoutSsn } from "../types";
 
 
 const getPatientsWithoutSsn = (): PatientWithoutSsn[] => {
-  return data.map(({ id, name, dateOfBirth, gender, occupation }) => ({
-    id, name, dateOfBirth, gender, occupation
+  return patientEntries.map(({ id, name, dateOfBirth, gender, occupation }) => ({
+    id,
+    name,
+    dateOfBirth,
+    gender,
+    occupation
   }));
 };
+
 
 const addPatient = (entry: NewPatient): Patient => {
   const id: string = uuid();
@@ -17,7 +22,7 @@ const addPatient = (entry: NewPatient): Patient => {
     ...entry
   };
   
-  data.push(newPatientEntry);
+  patientEntries.push(newPatientEntry);
 
   return newPatientEntry;
 };
