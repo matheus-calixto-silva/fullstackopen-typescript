@@ -1,0 +1,9 @@
+.course_part_container {
+  border-bottom: 1px solid black;
+  margin-bottom: 1.6rem;
+}
+
+.course_part_container p {
+  margin: 0;
+  text-align: left;
+}

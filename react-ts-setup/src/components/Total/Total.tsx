@@ -1,5 +1,5 @@
 const Total = ({ totalExercises }: { totalExercises: number }) => {
-  return (<p>Number of exercises {totalExercises}</p>)
+  return (<p style={{textAlign: "left"}}>Number of exercises: {totalExercises}</p>)
 }
 
 export default Total
