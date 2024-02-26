@@ -21,4 +21,13 @@ export interface Diary {
   comment?: string;
 }
 
+export interface NotificationMessage {
+  type: "success" | "error";
+  text: string;
+}
+
+export type Notification = NotificationMessage | null
+
 export type NonSensitiveDiary = Omit<Diary, 'comment'>;
+
+export type NewDiary = Omit<Diary, 'id'>;

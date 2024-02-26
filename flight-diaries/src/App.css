@@ -5,14 +5,8 @@
   text-align: center;
 }
 
-ul {
-  list-style: none;
-}
-
-ul li {
-  margin-bottom: 1.2rem;
-}
-
-ul li span {
-  display: block;
+form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
 }
