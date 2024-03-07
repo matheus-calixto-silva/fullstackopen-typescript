@@ -1,8 +1,8 @@
-import { useState, SyntheticEvent } from "react";
+import { SyntheticEvent, useState } from "react";
 
-import {  TextField, InputLabel, MenuItem, Select, Grid, Button, SelectChangeEvent } from '@mui/material';
+import { Button, Grid, InputLabel, MenuItem, Select, SelectChangeEvent, TextField } from '@mui/material';
 
-import { PatientFormValues, Gender } from "../../types";
+import { Gender, PatientFormValues } from "../../types";
 
 interface Props {
   onCancel: () => void;
@@ -25,10 +25,10 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
   const [dateOfBirth, setDateOfBirth] = useState('');
   const [gender, setGender] = useState(Gender.Other);
 
-  const onGenderChange = (event: SelectChangeEvent<string>) => {
-    event.preventDefault();
-    if ( typeof event.target.value === "string") {
-      const value = event.target.value;
+  const onGenderChange = (e: SelectChangeEvent<string>) => {
+    e.preventDefault();
+    if ( typeof e.target.value === "string") {
+      const value = e.target.value;
       const gender = Object.values(Gender).find(g => g.toString() === value);
       if (gender) {
         setGender(gender);
@@ -36,8 +36,8 @@ const AddPatientForm = ({ onCancel, onSubmit }: Props) => {
     }
   };
 
-  const addPatient = (event: SyntheticEvent) => {
-    event.preventDefault();
+  const addPatient = (e: SyntheticEvent) => {
+    e.preventDefault();
     onSubmit({
       name,
       occupation,
